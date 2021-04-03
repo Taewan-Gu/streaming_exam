@@ -19,7 +19,7 @@ app.add_middleware(
 @app.get("/")
 def main():
     file_like = open("hi.mp4", mode="rb")
-    return StreamingResponse(file_like, media_type="video/mp4")
+    return StreamingResponse(file_like, media_type="application/apple.vnd.mpegurl")
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8082, reload=True)
