@@ -22,4 +22,4 @@ def main():
     return StreamingResponse(file_like, media_type="video/mp4")
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8082, reload=True)
