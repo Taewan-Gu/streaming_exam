@@ -1,10 +1,20 @@
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
+from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
 some_file_path = "large-video-file.mp4"
 app = FastAPI()
 
+origins = ['*']
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def main():
